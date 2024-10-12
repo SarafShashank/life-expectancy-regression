@@ -50,27 +50,9 @@ cd life-expectancy-regression
 Ensure that your working directory contains the lifeexp.csv file.
 
 ## Project Workflow
-
-1. Data Preparation
-Data Cleaning: The Country column is removed as it is not useful for prediction.
-Dummy Variables: Dummy variables are created for the Status column (developed vs developing countries).
-Interaction Terms: Second-order interaction terms between variables are created to capture complex relationships.
-2. Model Building
-A forward stepwise selection method is applied to the base model (Adult.Mortality + HIV.AIDS + Income.composition.of.resources) and full model, selecting the most significant predictors and interaction terms.
-Multicollinearity is checked using Variance Inflation Factor (VIF) to remove predictors causing multicollinearity.
-3. Model Diagnostics
-Residuals Normality: The normality of residuals is checked using the Q-Q plot and Shapiro-Wilk test.
-Homoscedasticity: The Breusch-Pagan test is used to check for constant variance in residuals.
-Outliers and Influential Points: Influential points are detected using Cooks Distance and DFBetas.
-4. Cross-Validation
-A 10-fold Cross-Validation is performed to evaluate model stability and performance on unseen data, calculating the Root Mean Squared Error (RMSE) for each fold.
-Results and Visualizations
-Key plots generated during the analysis are included in the plots directory.
-
-4. Project Workflow
 This section describes the complete process of the analysis, from data cleaning to model diagnostics and evaluation.
 
-4.1 Data Preparation
+## 4.1 Data Preparation
 Remove Unnecessary Columns: The Country column is removed from the dataset since it is a categorical variable that does not directly influence the prediction of life expectancy.
 
 Handling Categorical Variables:
@@ -80,7 +62,7 @@ Interaction Terms:
 
 Interaction terms allow us to explore how two or more predictors together influence life expectancy. This project generates all possible second-order interaction terms (e.g., how the effect of Adult Mortality changes when considering Total Expenditure).
 
-4.2 Model Building
+## 4.2 Model Building
 Base Model: The initial model is created with important predictors like Adult Mortality, HIV/AIDS, and Income Composition of Resources.
 
 --  base.model <- lm(Life.expectancy ~ Adult.Mortality + HIV.AIDS + Income.composition.of.resources, data = interaction_terms)
@@ -91,7 +73,7 @@ Full Model: A model including all variables and interaction terms is defined, an
 
 Multicollinearity: Variance Inflation Factor (VIF) is calculated to check for multicollinearity among the predictors. Any predictor with a VIF value > 5 or 10 is removed to avoid multicollinearity.
 
-4.3 Model Diagnostics
+## 4.3 Model Diagnostics
 Several diagnostic tests and plots are generated to assess the quality of the regression model:
 
 Normality of Residuals: The Q-Q plot and Shapiro-Wilk test are used to ensure that residuals are normally distributed.
@@ -104,7 +86,7 @@ Homoscedasticity: The Breusch-Pagan test checks whether the residuals have const
 Outlier Detection: Outliers and influential points are detected using Cook’s Distance and DFBetas, which highlight observations that might disproportionately affect the model's performance.
 
 
-4.4 Cross-Validation
+## 4.4 Cross-Validation
 To evaluate how well the model generalizes to unseen data, 10-fold Cross-Validation is performed. The dataset is split into 10 folds, and the model is trained on 9 folds and tested on the 10th fold. This process repeats until each fold has been used for testing. The average Root Mean Squared Error (RMSE) is calculated as a performance measure.
 "rmse_values <- c()
 for(i in 1:10) {
@@ -114,7 +96,7 @@ for(i in 1:10) {
 mean_rmse <- mean(rmse_values)
 cat("Average RMSE across 10 folds:", mean_rmse)"
 
-5. Results and Visualizations
+## 5. Results and Visualizations
 Residuals vs Fitted Plot
 This plot checks the randomness of residuals to ensure that no patterns exist. Ideally, the residuals should be scattered randomly around zero.
 
@@ -123,7 +105,7 @@ Q-Q Plot of Residuals
 The Q-Q plot helps check if the residuals follow a normal distribution. If the points fall along the 45-degree line, the residuals are approximately normal.
 
 
-6. Usage
+## 6. Usage
 To run the analysis on your machine, follow these steps:
 
 Ensure you have installed the required packages (see Installation).
@@ -140,7 +122,7 @@ Clean the dataset.
 Perform model selection, diagnostics, and cross-validation.
 Save the final model and cross-validation results as output files.
 
-7. Contributing
+## 7. Contributing
 We welcome contributions to this project. If you have ideas for improvement, follow these steps:
 
 Fork the repository to your GitHub account.
