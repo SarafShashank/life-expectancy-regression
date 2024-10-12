@@ -66,14 +66,4 @@ A 10-fold Cross-Validation is performed to evaluate model stability and performa
 Results and Visualizations
 Key plots generated during the analysis are included in the plots directory.
 
-1. Residuals vs Fitted Plot
-This plot helps in checking the randomness of residuals. Ideally, residuals should be randomly scattered around zero with no clear pattern.
-
-
-2. Q-Q Plot of Residuals
-The Q-Q plot is used to visually check if the residuals follow a normal distribution. Ideally, the points should fall on the 45-degree line.
-
-
-3. Cross-Validation Results
-The average RMSE across 10 folds is:
-
+\
