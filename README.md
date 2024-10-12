@@ -77,31 +77,3 @@ The Q-Q plot is used to visually check if the residuals follow a normal distribu
 3. Cross-Validation Results
 The average RMSE across 10 folds is:
 
-bash
-Copy code
-Average RMSE across 10 folds: XX.XX
-(Replace XX.XX with actual output.)
-
-Usage
-To run the analysis, simply execute the R script:
-
-bash
-Copy code
-Rscript life_expectancy_regression.R
-Ensure that lifeexp.csv is in the same directory as the script.
-
-The script performs the following steps automatically:
-
-Data cleaning
-Model fitting and selection
-Diagnostics and cross-validation
-Saves the final model and cross-validation results to disk
-Contributing
-Contributions are welcome! If you have any improvements or suggestions, feel free to submit a pull request or open an issue.
-
-Steps to Contribute:
-Fork the repository.
-Create your feature branch (git checkout -b feature/myfeature).
-Commit your changes (git commit -am 'Add some feature').
-Push to the branch (git push origin feature/myfeature).
-Create a new Pull Request.
