@@ -60,7 +60,7 @@ Multicollinearity is checked using Variance Inflation Factor (VIF) to remove pre
 3. Model Diagnostics
 Residuals Normality: The normality of residuals is checked using the Q-Q plot and Shapiro-Wilk test.
 Homoscedasticity: The Breusch-Pagan test is used to check for constant variance in residuals.
-Outliers and Influential Points: Influential points are detected using Cook's Distance and DFBetas.
+Outliers and Influential Points: Influential points are detected using Cooks Distance and DFBetas.
 4. Cross-Validation
 A 10-fold Cross-Validation is performed to evaluate model stability and performance on unseen data, calculating the Root Mean Squared Error (RMSE) for each fold.
 Results and Visualizations
