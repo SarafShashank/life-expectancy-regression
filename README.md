@@ -49,7 +49,8 @@ git clone https://github.com/yourusername/life-expectancy-regression.git
 cd life-expectancy-regression
 Ensure that your working directory contains the lifeexp.csv file.
 
-Project Workflow
+## Project Workflow
+
 1. Data Preparation
 Data Cleaning: The Country column is removed as it is not useful for prediction.
 Dummy Variables: Dummy variables are created for the Status column (developed vs developing countries).
