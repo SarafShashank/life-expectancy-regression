@@ -38,7 +38,7 @@ The dataset can be found in this repository as `lifeexp.csv`.
 
 To run this project, you need R and several R packages. You can install the required packages by running the following commands in your R console:
 
-```r
+
 # Install necessary packages
 install.packages(c("tidyverse", "dplyr", "corrplot", "fastDummies", "car", "Metrics", "olsrr", "leaps", "lmtest"))
 Clone this repository:
