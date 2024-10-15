@@ -52,7 +52,7 @@ Ensure that your working directory contains the lifeexp.csv file.
 ## Project Workflow
 This section describes the complete process of the analysis, from data cleaning to model diagnostics and evaluation.
 
-## 4.1 Data Preparation
+ 4.1 Data Preparation
 Remove Unnecessary Columns: The Country column is removed from the dataset since it is a categorical variable that does not directly influence the prediction of life expectancy.
 
 Handling Categorical Variables:
@@ -62,7 +62,7 @@ Interaction Terms:
 
 Interaction terms allow us to explore how two or more predictors together influence life expectancy. This project generates all possible second-order interaction terms (e.g., how the effect of Adult Mortality changes when considering Total Expenditure).
 
-## 4.2 Model Building
+ 4.2 Model Building
 Base Model: The initial model is created with important predictors like Adult Mortality, HIV/AIDS, and Income Composition of Resources.
 
 --  base.model <- lm(Life.expectancy ~ Adult.Mortality + HIV.AIDS + Income.composition.of.resources, data = interaction_terms)
@@ -73,7 +73,7 @@ Full Model: A model including all variables and interaction terms is defined, an
 
 Multicollinearity: Variance Inflation Factor (VIF) is calculated to check for multicollinearity among the predictors. Any predictor with a VIF value > 5 or 10 is removed to avoid multicollinearity.
 
-## 4.3 Model Diagnostics
+ 4.3 Model Diagnostics
 Several diagnostic tests and plots are generated to assess the quality of the regression model:
 
 Normality of Residuals: The Q-Q plot and Shapiro-Wilk test are used to ensure that residuals are normally distributed.
@@ -86,7 +86,7 @@ Homoscedasticity: The Breusch-Pagan test checks whether the residuals have const
 Outlier Detection: Outliers and influential points are detected using Cook’s Distance and DFBetas, which highlight observations that might disproportionately affect the model's performance.
 
 
-## 4.4 Cross-Validation
+ 4.4 Cross-Validation
 To evaluate how well the model generalizes to unseen data, 10-fold Cross-Validation is performed. The dataset is split into 10 folds, and the model is trained on 9 folds and tested on the 10th fold. This process repeats until each fold has been used for testing. The average Root Mean Squared Error (RMSE) is calculated as a performance measure.
 "rmse_values <- c()
 for(i in 1:10) {
